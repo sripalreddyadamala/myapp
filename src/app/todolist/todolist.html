@@ -1,0 +1,18 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input class="new-todo" placeholder="These is sripal sample project?" autofocus
+           [(ngModel)]="newItem" (keyup.enter)="addItem()">
+    <button class="add" (click)="addItem()">Add</button>
+  </header>
+  <section class="main">
+    <ul class="todo-list">
+      <li *ngFor="let item of store.items">
+        <div class="view">
+          <label>{{item.text}}</label>
+          <todo-item [item]="item" (done)="removeItem($event)"></todo-item>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
